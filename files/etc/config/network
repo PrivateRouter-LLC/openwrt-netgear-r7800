@@ -6,12 +6,12 @@ config interface 'loopback'
 	option netmask '255.0.0.0'
 
 config globals 'globals'
-	option ula_prefix 'fd08:94ee:812d::/48'
+	option ula_prefix 'fd82:7e67:cd6c::/48'
 
 config device
 	option name 'br-lan'
 	option type 'bridge'
-	list ports 'eth0.1'
+	list ports 'eth1.1'
 
 config interface 'lan'
 	option device 'br-lan'
@@ -19,10 +19,6 @@ config interface 'lan'
 	option ipaddr '192.168.8.1/24'
 	option netmask '255.255.255.0'
 	option ip6assign '60'
-
-config device
-	option name 'eth0.2'
-	option macaddr '84:d8:1b:80:15:09'
 
 config interface 'wan'
 	option device 'eth0.2'
@@ -40,10 +36,10 @@ config switch
 config switch_vlan
 	option device 'switch0'
 	option vlan '1'
-	option ports '2 3 4 5 0t'
+	option ports '1 2 3 4 6t'
 
 config switch_vlan
 	option device 'switch0'
 	option vlan '2'
-	option ports '1 0t'
+	option ports '5 0t'
 
